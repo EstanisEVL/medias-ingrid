@@ -156,7 +156,7 @@ const Categorias = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center pt-8 space-y-6"
           >
-            <p className="text-lg text-slate-700 max-w-3xl mx-auto">
+            <p className="text-2xl text-slate-700 max-w-3xl mx-auto">
               Descubrí más diseños en nuestro Instagram
             </p>
             <a

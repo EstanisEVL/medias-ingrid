@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
-import heroImage from '../../assets/images/hero/Puntilla-Libro.png'
+import heroImage from '../../assets/images/logo/Logo Medias Ingrid.png'
 
 const Hero = () => {
   return (
@@ -14,10 +14,10 @@ const Hero = () => {
             className="space-y-6"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
-              Medias <span className="text-primary">Ingrid</span>
+              Fábrica de <span className="text-primary">medias</span>
             </h1>
             <p className="text-xl text-gray-700">
-              Calidad premium, diseños exclusivos y envíos a todo el país.
+              Diseños personalizados y de línea al por mayor, con envíos a todo el país.
             </p>
             
             <a

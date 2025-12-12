@@ -15,7 +15,7 @@ const AcercaDe = () => {
             Más de 40 años fabricando medias en Argentina
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            En <span className="font-bold text-primary">ING Socks Textil S.A.</span> somos fabricantes directos, 
+            En <span className="font-bold text-primary">Medias Ingrid</span> somos fabricantes directos, 
             especializados en medias para mujer, niño, bebé y diseños personalizados. Producimos en nuestra propia 
             planta y ofrecemos precios por docena y pedidos mayoristas desde todo el país.
           </p>

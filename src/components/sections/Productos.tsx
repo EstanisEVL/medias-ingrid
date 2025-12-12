@@ -13,11 +13,8 @@ const Productos = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Conocé nuestros productos
+            Hacé tu consulta
           </h2>
-          <p className="text-xl text-gray-600">
-            Algunas líneas destacadas
-          </p>
         </motion.div>
 
         <div className="flex justify-center mb-12">

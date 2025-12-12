@@ -5,17 +5,17 @@ const features = [
   {
     icon: Factory,
     title: 'Fábrica directa',
-    description: 'Sin intermediarios',
+    description: 'Sin intermediarios, precios mayoristas',
   },
   {
     icon: Award,
     title: 'Calidad premium',
-    description: 'Algodón, puntilla, lycra, jacquard',
+    description: 'Materias primas de primera línea',
   },
   {
     icon: Users,
     title: 'Atención personalizada',
-    description: 'Asesoramiento mayorista',
+    description: 'Asesoramiento mayorista y atención al cliente',
   },
 ]
 
