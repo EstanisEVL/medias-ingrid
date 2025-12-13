@@ -1,3 +1,5 @@
+import { CatalogItem } from '../interfaces';
+
 import dama1 from '../assets/images/categories/women/dende-di-topo.png'
 import dama2 from '../assets/images/categories/women/flores.png'
 import dama3 from '../assets/images/categories/women/lurex.png'
@@ -9,7 +11,7 @@ import unisex1 from '../assets/images/categories/unisex/estamapas.png'
 import unisex2 from '../assets/images/categories/unisex/rayas.png'
 import unisex3 from '../assets/images/categories/unisex/soquetes-estampa.png'
 
-export const catalogItems = [
+export const catalogItems: CatalogItem[] = [
     {
         id: 1,
         images: [dama1, dama2, dama3],

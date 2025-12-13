@@ -1,3 +1,5 @@
+import { Client } from '../interfaces';
+
 import bullbenny from '../assets/images/clients/Bullbenny.png'
 import complot from '../assets/images/clients/Complot.png'
 import frixion from '../assets/images/clients/Frixion.png'
@@ -6,7 +8,7 @@ import nv from '../assets/images/clients/Nv.png'
 import procer from '../assets/images/clients/Procer.png'
 import unitivo from '../assets/images/clients/Unitivo.png'
 
-export const clients = [
+export const clients: Client[] = [
     { id: 1, name: 'Bullbenny', logo: bullbenny },
     { id: 2, name: 'Complot', logo: complot },
     { id: 3, name: 'Frixion', logo: frixion },
