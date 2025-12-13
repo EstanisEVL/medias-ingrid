@@ -5,15 +5,15 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import bullbenny from '../../assets/images/clientes/Cliente - Bullbenny.png'
-import complot from '../../assets/images/clientes/Cliente - Complot.png'
-import frixion from '../../assets/images/clientes/Cliente - Frixion.png'
-import hardway from '../../assets/images/clientes/Cliente - Hardway.png'
-import nv from '../../assets/images/clientes/Cliente - NV.png'
-import procer from '../../assets/images/clientes/Cliente - Procer.png'
-import unitivo from '../../assets/images/clientes/Cliente - Unitivo.png'
+import bullbenny from '../../assets/images/clients/Bullbenny.png'
+import complot from '../../assets/images/clients/Complot.png'
+import frixion from '../../assets/images/clients/Frixion.png'
+import hardway from '../../assets/images/clients/Hardway.png'
+import nv from '../../assets/images/clients/Nv.png'
+import procer from '../../assets/images/clients/Procer.png'
+import unitivo from '../../assets/images/clients/Unitivo.png'
 
-const clientes = [
+const clients = [
   { name: 'Bullbenny', logo: bullbenny },
   { name: 'Complot', logo: complot },
   { name: 'Frixion', logo: frixion },
@@ -23,9 +23,9 @@ const clientes = [
   { name: 'Unitivo', logo: unitivo },
 ]
 
-const Clientes = () => {
+const Clients = () => {
   return (
-    <section id="clientes" className="py-20 bg-gray-50">
+    <section id="clients" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,12 +72,12 @@ const Clientes = () => {
             loop
             className="pb-12"
           >
-            {clientes.map((cliente) => (
-              <SwiperSlide key={cliente.name}>
+            {clients.map((client) => (
+              <SwiperSlide key={client.name}>
                 <div className="bg-white rounded-xl shadow-md p-6 h-32 flex items-center justify-center hover:shadow-lg transition-shadow">
                   <img
-                    src={cliente.logo}
-                    alt={cliente.name}
+                    src={client.logo}
+                    alt={client.name}
                     className="max-h-20 max-w-full object-contain"
                     loading="lazy"
                   />
@@ -91,6 +91,6 @@ const Clientes = () => {
   )
 }
 
-export default Clientes
+export default Clients
 
 

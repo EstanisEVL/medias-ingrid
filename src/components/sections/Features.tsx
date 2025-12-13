@@ -19,7 +19,7 @@ const features = [
   },
 ]
 
-const PorQueElegirnos = () => {
+const Features = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -65,6 +65,6 @@ const PorQueElegirnos = () => {
   )
 }
 
-export default PorQueElegirnos
+export default Features
 
 

@@ -2,16 +2,16 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-import dama1 from '../../assets/images/categorias/Dama/Dama - Dende di topo.png'
-import dama2 from '../../assets/images/categorias/Dama/Dama - Flores.png'
-import dama3 from '../../assets/images/categorias/Dama/Dame - Lurex.png'
-import hombre1 from '../../assets/images/categorias/Hombre/Hombre - media caña toalla.png'
-import hombre2 from '../../assets/images/categorias/Hombre/Hombre - Soquete rayado.jpg'
-import ninos1 from '../../assets/images/categorias/Niños/Niños - mix.png'
-import ninos2 from '../../assets/images/categorias/Niños/Niños - Rayada.png'
-import unisex1 from '../../assets/images/categorias/Unisex/Unisex - Estamapas.png'
-import unisex2 from '../../assets/images/categorias/Unisex/Unisex - Rayas.png'
-import unisex3 from '../../assets/images/categorias/Unisex/Unisex - Soq. Estampa.png'
+import dama1 from '../../assets/images/categories/Dama/Dama - Dende di topo.png'
+import dama2 from '../../assets/images/categories/Dama/Dama - Flores.png'
+import dama3 from '../../assets/images/categories/Dama/Dame - Lurex.png'
+import hombre1 from '../../assets/images/categories/Hombre/Hombre - media caña toalla.png'
+import hombre2 from '../../assets/images/categories/Hombre/Hombre - Soquete rayado.jpg'
+import ninos1 from '../../assets/images/categories/Niños/Niños - mix.png'
+import ninos2 from '../../assets/images/categories/Niños/Niños - Rayada.png'
+import unisex1 from '../../assets/images/categories/Unisex/Unisex - Estamapas.png'
+import unisex2 from '../../assets/images/categories/Unisex/Unisex - Rayas.png'
+import unisex3 from '../../assets/images/categories/Unisex/Unisex - Soq. Estampa.png'
 
 const catalogItems = [
   {
@@ -106,9 +106,9 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
   )
 }
 
-const Categorias = () => {
+const Categories = () => {
   return (
-    <section id="categorias" className="py-24 bg-gradient-to-b from-white to-slate-50">
+    <section id="categories" className="py-24 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           <motion.div
@@ -177,6 +177,6 @@ const Categorias = () => {
   )
 }
 
-export default Categorias
+export default Categories
 
 

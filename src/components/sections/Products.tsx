@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 
-const Productos = () => {
+const Products = () => {
   return (
-    <section id="productos" className="py-20 bg-white">
+    <section id="products" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -87,5 +87,5 @@ const Productos = () => {
   )
 }
 
-export default Productos
+export default Products
 

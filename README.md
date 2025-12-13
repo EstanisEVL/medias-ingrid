@@ -41,7 +41,7 @@ src/
 ├── assets/
 │   └── images/          # Imágenes organizadas por categoría
 ├── components/
-│   ├── layout/          # Header, Footer
+│   ├── layout/          # Footer
 │   └── sections/        # Secciones de la SPA
 ├── App.tsx              # Componente principal
 ├── main.tsx             # Entry point
