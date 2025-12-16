@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Truck } from 'lucide-react'
-import logo from '../../assets/images/logo/Logo Medias Ingrid.png'
+import logo from '../../assets/images/logo/medias-ingrid.png'
 
 const Footer = () => {
   return (

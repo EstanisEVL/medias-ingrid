@@ -1,86 +1,141 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+
+import { productCategories } from '../../data/productCategories';
+import { ProductCategory } from '../../interfaces';
+
+function ImageCarousel({ images, title }: { images: string[]; title: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  return (
+    <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 group/carousel">
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-500 ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <img
+            src={image}
+            alt={`${title} - ${index + 1}`}
+            className="w-full h-full object-cover"
+            style={{ imageRendering: 'auto' }}
+          />
+        </div>
+      ))}
+
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={prevImage}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10"
+            aria-label="Imagen anterior"
+          >
+            <ChevronLeft className="w-5 h-5" style={{ color: '#1A1A1A' }} />
+          </button>
+          <button
+            onClick={nextImage}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg opacity-0 group-hover/carousel:opacity-100 transition-opacity z-10"
+            aria-label="Imagen siguiente"
+          >
+            <ChevronRight className="w-5 h-5" style={{ color: '#1A1A1A' }} />
+          </button>
+
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentIndex
+                    ? 'bg-white w-6'
+                    : 'bg-white/60 hover:bg-white/80'
+                }`}
+                aria-label={`Ir a imagen ${index + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
 
 const Products = () => {
   return (
-    <section id="products" className="py-20 bg-white">
+    <section id="products" className="py-24 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Hacé tu consulta
-          </h2>
-        </motion.div>
-
-        <div className="flex justify-center mb-12">
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+        <div className="max-w-6xl mx-auto space-y-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-primary/10 rounded-2xl p-8 flex flex-col"
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-4"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Productos en línea
-            </h3>
-            <p className="text-gray-700 mb-2">
-              Nuestros valores dependen del modelo, material y cantidad. El pedido mínimo por artículo y talle es de{' '}
-              <span className="font-bold text-primary">1 docena</span>.
+            <h2 className="text-4xl md:text-5xl" style={{ color: '#1A1A1A' }}>
+              Conocé nuestros productos
+            </h2>
+            <p className="text-xl text-slate-600">
+              Algunas líneas destacadas
             </p>
-            <p className="text-gray-700 mb-6 flex-grow">
-              Consultá por disponibilidad, tiempos y promociones por volumen.
-            </p>
-            <a
-              href="https://wa.me/5491139088038?text=Hola,%20quiero%20consultar%20precios%20de%20productos%20en%20línea"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-              style={{ backgroundColor: '#25D366' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1ea952'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#25D366'}
-            >
-              <MessageCircle className="w-6 h-6" />
-              Consultar precios
-            </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-blue-50 rounded-2xl p-8 flex flex-col"
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Productos personalizados
-            </h3>
-            <p className="text-gray-700 mb-2">
-              El pedido mínimo es de{' '}
-              <span className="font-bold text-primary">5 docenas</span> por modelo y variante de color.
-            </p>
-            <p className="text-gray-700 mb-6 flex-grow">
-              Consultá disponibilidad, tiempos y promociones por volumen.
-            </p>
-            <a
-              href="https://wa.me/5491154960185?text=Hola,%20quiero%20consultar%20sobre%20productos%20personalizados"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-              style={{ backgroundColor: '#25D366' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1ea952'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#25D366'}
-            >
-              <MessageCircle className="w-6 h-6" />
-              Consultar personalizados
-            </a>
-          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {productCategories.map((productCategory: ProductCategory, index: number) => (
+              <motion.div
+                key={productCategory.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                  <ImageCarousel images={productCategory.images} title={productCategory.title} />
+                </div>
+                <div className="p-6 space-y-2">
+                  <h3 className="text-xl" style={{ color: '#1A1A1A' }}>
+                    {productCategory.title}
+                  </h3>
+                  <p className="text-sm text-slate-600">{productCategory.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center pt-8 space-y-6"
+          >
+            <p className="text-2xl text-slate-700 max-w-3xl mx-auto">
+              Descubrí más diseños en nuestro Instagram
+            </p>
+            <a
+              href="https://www.instagram.com/medias.ingrid/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-white"
+              style={{ backgroundColor: '#E6007E' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c0006a'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E6007E'}
+            >
+              Visitar Instagram
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -88,4 +143,5 @@ const Products = () => {
 }
 
 export default Products
+
 

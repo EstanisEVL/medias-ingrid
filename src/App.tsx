@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
+import Header from './components/layout/Header'
 import Hero from './components/sections/Hero'
-import Products from './components/sections/Products'
+import Contact from './components/sections/Contact'
 import About from './components/sections/About'
-import Categories from './components/sections/Categories'
+import Products from './components/sections/Products'
 import Features from './components/sections/Features'
 import Clients from './components/sections/Clients'
 import Footer from './components/layout/Footer'
@@ -30,10 +31,11 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
       <main>
         <Hero />
-        <Categories />
         <Products />
+        <Contact />
         <Features />
         <Clients />
         <About />

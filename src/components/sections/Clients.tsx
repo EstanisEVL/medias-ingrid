@@ -89,7 +89,7 @@ const Clients = () => {
   }, [currentIndex, isDragging]);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+    <section id="clients" className="py-24 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">

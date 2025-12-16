@@ -4,7 +4,7 @@ import heroImage from '../../assets/images/hero/libro-puntilla.png'
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-r from-primary/10 via-white to-white">
+    <section id="hero" className="relative min-h-screen flex items-center bg-gradient-to-r from-primary/10 via-white to-white">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
