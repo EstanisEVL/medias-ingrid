@@ -1,39 +1,51 @@
 import { ProductCategory } from '../interfaces';
 
-import dama1 from '../assets/images/categories/women/dende-di-topo.png'
-import dama2 from '../assets/images/categories/women/flores.png'
-import dama3 from '../assets/images/categories/women/lurex.png'
-import hombre1 from '../assets/images/categories/men/media-cana-toalla.png'
-import hombre2 from '../assets/images/categories/men/soquete-rayado.jpg'
-import ninos1 from '../assets/images/categories/kids/mix.png'
-import ninos2 from '../assets/images/categories/kids/rayada.png'
-import unisex1 from '../assets/images/categories/unisex/estamapas.png'
-import unisex2 from '../assets/images/categories/unisex/rayas.png'
-import unisex3 from '../assets/images/categories/unisex/soquetes-estampa.png'
+import adults1 from '../assets/images/categories/adults/men1.jpg'
+import adults2 from '../assets/images/categories/adults/men2.jpeg'
+import adults3 from '../assets/images/categories/adults/unisex1.jpeg'
+import adults4 from '../assets/images/categories/adults/unisex2.jpeg'
+import adults5 from '../assets/images/categories/adults/women1.png'
+import adults6 from '../assets/images/categories/adults/women2.jpeg'
+
+import children1 from '../assets/images/categories/children/babies1.jpeg'
+import children2 from '../assets/images/categories/children/babies2.jpeg'
+import children3 from '../assets/images/categories/children/babies3.jpeg'
+import children4 from '../assets/images/categories/children/kids1.jpeg'
+import children5 from '../assets/images/categories/children/kids2.jpeg'
+import children6 from '../assets/images/categories/children/kids3.jpeg'
+
+import institutional1 from '../assets/images/categories/institutional/brands1.jpg'
+import institutional2 from '../assets/images/categories/institutional/uniforms1.jpg'
+import institutional3 from '../assets/images/categories/institutional/uniforms2.png'
+import institutional4 from '../assets/images/categories/institutional/uniforms3.png'
+
+import sports1 from '../assets/images/categories/sports/sports1.jpg'
+import sports2 from '../assets/images/categories/sports/sports2.jpg'
+import sports3 from '../assets/images/categories/sports/sports3.jpg'
 
 export const productCategories: ProductCategory[] = [
     {
         id: 1,
-        images: [dama1, dama2, dama3],
-        title: 'Dama',
-        description: 'Diseños elegantes y contemporáneos con detalles exclusivos',
+        images: [adults1, adults2, adults3, adults4, adults5, adults6],
+        title: 'Adultos',
+        description: 'Hombre - Mujer - Unisex',
     },
     {
         id: 2,
-        images: [hombre1, hombre2],
-        title: 'Hombre',
-        description: 'Modelos clásicos y deportivos con máxima comodidad',
+        images: [children1, children2, children3, children4, children5, children6],
+        title: 'Infantil',
+        description: 'Bebés - Niños',
     },
     {
         id: 3,
-        images: [ninos1, ninos2],
-        title: 'Niños',
-        description: 'Estampados divertidos con personajes, colores vibrantes y alta durabilidad',
+        images: [institutional1, institutional2, institutional3, institutional4],
+        title: 'Institucional',
+        description: 'Uniformes - Marcas',
     },
     {
         id: 4,
-        images: [unisex1, unisex2, unisex3],
-        title: 'Unisex',
-        description: 'Diseños versátiles para todos los estilos y ocasiones',
+        images: [sports1, sports2, sports3],
+        title: 'Deportivo',
+        description: 'Fútbol - Running - Alto rendimiento',
     },
 ]
