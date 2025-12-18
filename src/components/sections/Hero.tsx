@@ -21,7 +21,7 @@ const Hero = () => {
             </p>
             
             <a
-              href="https://wa.me/5491139088038?text=Hola,%20vi%20su%20sitio%20web%20y%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20de%20medias."
+              href="https://wa.me/5491139088038?text=Hola,%20vi%20su%20sitio%20web%20y%20me%20interesa%20conocer%20más%20sobre%20sus%20productos."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
