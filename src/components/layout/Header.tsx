@@ -37,7 +37,7 @@ const Header = () => {
             </a>
 					</div>
 					<div>
-						<nav className="flex items-center gap-8 text-sm font-medium text-gray-600">
+						<nav className="flex items-center gap-8 text-lg font-medium text-gray-600">
 							{
 								menuSections.map(section => (
 									<a key={section.id} href={section.href} className="hover:text-gray-900 transition-colors after:w-full">
