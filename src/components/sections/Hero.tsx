@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
-import heroImage from '../../assets/images/hero/libro-puntilla.png'
+import heroImage from '../../assets/images/hero/hero.png'
 
 const Hero = () => {
   return (
