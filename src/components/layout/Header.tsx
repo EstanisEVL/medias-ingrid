@@ -23,8 +23,8 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center max-w-7xl mx-auto">
-          <div className="flex items-center flex-shrink-0 pr-12 lg:pr-20">
+        <div className="flex items-center justify-center max-w-7xl mx-auto">
+          <div className="flex items-center flex-shrink-0 pr-4 lg:pr-48">
             <a href="#hero">
               <img
                 src={logoIngrid}
