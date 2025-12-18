@@ -37,7 +37,7 @@ const Contact = () => {
               Consultá por disponibilidad, tiempos y promociones por volumen.
             </p>
             <a
-              href="https://wa.me/5491139088038?text=Hola,%20quiero%20consultar%20precios%20de%20productos%20en%20línea"
+              href="https://wa.me/5491139088038?text=Hola,%20quisiera%20consultar%20sobre%20sus%20productos%20de%20línea"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
