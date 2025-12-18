@@ -16,3 +16,9 @@ export interface MenuSection {
     href: string;
     title: string;
 }
+
+export interface MobileMenu {
+	handleClick: () => void;
+    isMenuOpen: boolean;
+	menuSections: MenuSection[];
+}
