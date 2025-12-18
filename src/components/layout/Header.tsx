@@ -30,7 +30,7 @@ const Header = () => {
                 src={logoIngrid}
                 alt="Ingrid Medias - Fábrica de medias por mayor"
                 className={`w-auto object-contain transition-all duration-300 ${
-                  isScrolled ? "h-10 md:h-12" : "h-12 md:h-14"
+                  isScrolled ? "h-14 md:h-16" : "h-18 md:h-20"
                 }`}
                 style={{ imageRendering: 'auto' }}
               />
