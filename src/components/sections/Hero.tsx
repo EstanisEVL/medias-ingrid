@@ -13,7 +13,7 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
+            <h1 className="text-5xl md:text-6xl font-semibold text-gray-900">
               Fábrica de <span className="text-primary">medias</span>
             </h1>
             <p className="text-xl text-gray-700">

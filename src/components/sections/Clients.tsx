@@ -121,7 +121,7 @@ const Clients = () => {
                   key={`${client.id}-${index}`}
                   className="flex-shrink-0 bg-white rounded-2xl p-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 aspect-square"
                   style={{ 
-                    width: `calc((100% - ${(visibleCards - 1) * 2}rem) / ${visibleCards})`,
+                    width: `calc((75% - ${(visibleCards - 1) * 2}rem) / ${visibleCards})`,
                     pointerEvents: isDragging ? 'none' : 'auto'
                   }}
                 >
