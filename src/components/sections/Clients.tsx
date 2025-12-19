@@ -9,10 +9,10 @@ const Clients = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(3);
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const extendedClients = [...clients, ...clients, ...clients];
-  const visibleCards = 3;
 
   const nextSlide = () => {
     if (isTransitioning) return;
@@ -61,6 +61,53 @@ const Clients = () => {
     }
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX);
+    setDragOffset(0);
+  };
+  
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+  
+    const diff = e.touches[0].pageX - startX;
+    setDragOffset(diff);
+  };
+  
+  const handleTouchEnd = () => {
+    if (!isDragging) return;
+  
+    setIsDragging(false);
+  
+    const threshold = carouselRef.current
+      ? carouselRef.current.offsetWidth / (visibleCards * 3)
+      : 100;
+  
+    if (dragOffset > threshold) {
+      prevSlide();
+    } else if (dragOffset < -threshold) {
+      nextSlide();
+    }
+  
+    setDragOffset(0);
+  };  
+
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      if (window.innerWidth < 640) {
+        setVisibleCards(1);
+      } else if (window.innerWidth < 1024) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(3);
+      }
+    };
+  
+    updateVisibleCards();
+    window.addEventListener("resize", updateVisibleCards);
+    return () => window.removeEventListener("resize", updateVisibleCards);
+  }, []);
+
   useEffect(() => {
     if (!isTransitioning) return;
 
@@ -79,14 +126,20 @@ const Clients = () => {
   }, [currentIndex, isTransitioning]);
 
   useEffect(() => {
-    if (isDragging) return;
-    
+    if (isDragging || visibleCards === 1) return;
+  
     const interval = setInterval(() => {
       nextSlide();
     }, 3000);
-
+  
     return () => clearInterval(interval);
-  }, [currentIndex, isDragging]);
+  }, [currentIndex, isDragging, visibleCards]);
+
+  useEffect(() => {
+    setCurrentIndex(clients.length);
+  }, []);
+
+  const slidePercentage = visibleCards === 1 ? 100 : 100 / visibleCards;
 
   return (
     <section id="clients" className="py-24 bg-gradient-to-b from-slate-50 to-white">
@@ -108,48 +161,62 @@ const Clients = () => {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
           >
-            <div 
-              className={`flex gap-8 ${isTransitioning && !isDragging ? 'transition-transform duration-500 ease-in-out' : ''}`}
+            <div
+              className={`flex ${
+                isTransitioning && !isDragging
+                  ? 'transition-transform duration-500 ease-in-out'
+                  : ''
+              }`}
               style={{
-                transform: `translateX(calc(-${(currentIndex * (100 / visibleCards))}% + ${dragOffset}px))`
+                transform: `translateX(calc(-${currentIndex * slidePercentage}% + ${dragOffset}px))`
               }}
             >
               {extendedClients.map((client, index) => (
-                <div 
+                <div
                   key={`${client.id}-${index}`}
-                  className="flex-shrink-0 bg-white rounded-2xl p-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 aspect-square"
-                  style={{ 
-                    width: `calc((75% - ${(visibleCards - 1) * 2}rem) / ${visibleCards})`,
+                  className="flex-shrink-0 flex justify-center"
+                  style={{
+                    width: visibleCards === 1
+                      ? '100%'
+                      : `calc((100% - ${(visibleCards - 1) * 2}rem) / ${visibleCards})`,
                     pointerEvents: isDragging ? 'none' : 'auto'
                   }}
                 >
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="w-full h-full object-contain"
-                    style={{ imageRendering: 'auto' }}
-                    draggable={false}
-                  />
+                  <div className="bg-white rounded-2xl p-6 sm:p-10 lg:p-12 flex items-center justify-center shadow-lg aspect-square w-[85%] max-w-sm">
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="w-full h-full object-contain"
+                      draggable={false}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
 
-            <button
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
-              aria-label="Marca anterior"
-            >
-              <ChevronLeft className="w-6 h-6" style={{ color: '#1A1A1A' }} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
-              aria-label="Marca siguiente"
-            >
-              <ChevronRight className="w-6 h-6" style={{ color: '#1A1A1A' }} />
-            </button>
+            {visibleCards > 1 && (
+              <>
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                  aria-label="Marca anterior"
+                >
+                  <ChevronLeft className="w-6 h-6" style={{ color: '#1A1A1A' }} />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                  aria-label="Marca siguiente"
+                >
+                  <ChevronRight className="w-6 h-6" style={{ color: '#1A1A1A' }} />
+                </button>
+              </>
+            )}
 
             <div className="flex justify-center gap-2 mt-8">
               {clients.map((_, index) => (
