@@ -13,6 +13,7 @@ import children4 from '../assets/images/categories/children/boys2.png'
 
 import school1 from '../assets/images/categories/school/uniform1-header.png'
 import school2 from '../assets/images/categories/school/uniform2.png'
+import school3 from '../assets/images/categories/school/uniform3.jpg'
 
 // import special1 from '../assets/images/categories/special/sports1.jpg'
 // import special2 from '../assets/images/categories/special/sports2.jpg'
@@ -33,7 +34,7 @@ export const productCategories: ProductCategory[] = [
     },
     {
         id: 3,
-        images: [school1, school2],
+        images: [school1, school2, school3],
         title: 'Escolar',
         description: 'Uniformes',
     },
