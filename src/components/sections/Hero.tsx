@@ -4,7 +4,7 @@ import heroImage from '../../assets/images/hero/hero.png'
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center bg-gradient-to-r from-primary/10 via-white to-white pt-24 sm:pt-28 lg:pt-0">
+    <section id="hero" className="relative min-h-screen flex items-center bg-gradient-to-r from-primary/10 via-white to-white pt-24 sm:pt-28 md:pt-14 lg:pt-0">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
