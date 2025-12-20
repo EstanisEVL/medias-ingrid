@@ -10,14 +10,17 @@ import children1 from '../assets/images/categories/children/babies1.jpeg'
 import children2 from '../assets/images/categories/children/girls1.jpeg'
 import children3 from '../assets/images/categories/children/boys1.jpg'
 import children4 from '../assets/images/categories/children/boys2.png'
+import children5 from '../assets/images/categories/children/boys3.jpg'
 
 import school1 from '../assets/images/categories/school/uniform1-header.png'
 import school2 from '../assets/images/categories/school/uniform2.png'
 import school3 from '../assets/images/categories/school/uniform3.jpg'
 
-// import special1 from '../assets/images/categories/special/sports1.jpg'
-// import special2 from '../assets/images/categories/special/sports2.jpg'
-// import special3 from '../assets/images/categories/special/sports3.jpg'
+import special1 from '../assets/images/categories/special/brands1.png'
+import special2 from '../assets/images/categories/special/brands2.jpg'
+import special3 from '../assets/images/categories/special/brands3.jpg'
+import special4 from '../assets/images/categories/special/institutional1.jpg'
+import special5 from '../assets/images/categories/special/institutional2.jpg'
 
 export const productCategories: ProductCategory[] = [
     {
@@ -28,7 +31,7 @@ export const productCategories: ProductCategory[] = [
     },
     {
         id: 2,
-        images: [children1, children2, children3, children4],
+        images: [children1, children2, children3, children4, children5],
         title: 'Infantil',
         description: 'Bebés - Niños',
     },
@@ -40,7 +43,7 @@ export const productCategories: ProductCategory[] = [
     },
     {
         id: 4,
-        images: ['', '', ''],
+        images: [special1, special2, special3, special4, special5],
         title: 'Especial',
         description: 'Marcas - Instituciones',
     },
