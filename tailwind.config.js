@@ -37,6 +37,18 @@ export default {
           'sans-serif',
         ],
       },
+      keyframes: {
+        heroFade: {
+          '0%': { opacity: '0', transform: 'scale(1.05)' },
+          '10%': { opacity: '1' },
+          '30%': { opacity: '1' },
+          '40%': { opacity: '0', transform: 'scale(1)' },
+          '100%': { opacity: '0' },
+        },
+      },
+      animation: {
+        heroFade: 'heroFade 9s infinite ease-in-out',
+      },
     },
   },
   plugins: [],

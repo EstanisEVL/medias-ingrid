@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
-import heroImage from '../../assets/images/hero/hero.png'
+import HeroMedia from './HeroMedia'
 
 const Hero = () => {
   return (
@@ -58,13 +58,17 @@ const Hero = () => {
             <div className="absolute -inset-4 rounded-3xl blur-2xl opacity-20" />
 
             <div className="relative bg-white p-8 rounded-3xl shadow-2xl">
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-slate-50">
-                <img
-                  src={heroImage}
-                  alt="Medias premium ING Socks"
-                  className="w-full h-full object-cover"
-                  style={{ imageRendering: 'auto' }}
-                />
+              <div className="
+                relative
+                w-full
+                aspect-[6/5]
+                lg:aspect-[4/3]
+                rounded-3xl
+                overflow-hidden
+                shadow-2xl
+                bg-white
+              ">
+                <HeroMedia />
               </div>
             </div>
           </motion.div>
