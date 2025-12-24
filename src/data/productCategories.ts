@@ -8,9 +8,8 @@ import adults5 from '../assets/images/categories/adults/unisex2.jpeg'
 
 import children1 from '../assets/images/categories/children/babies1.jpeg'
 import children2 from '../assets/images/categories/children/girls1.jpeg'
-import children3 from '../assets/images/categories/children/boys1.jpg'
-import children4 from '../assets/images/categories/children/boys2.png'
-import children5 from '../assets/images/categories/children/boys3.jpg'
+import children3 from '../assets/images/categories/children/boys2.png'
+import children4 from '../assets/images/categories/children/boys3.jpg'
 
 import school1 from '../assets/images/categories/school/uniform1-header.png'
 import school2 from '../assets/images/categories/school/uniform2.png'
@@ -31,7 +30,7 @@ export const productCategories: ProductCategory[] = [
     },
     {
         id: 2,
-        images: [children1, children2, children3, children4, children5],
+        images: [children1, children2, children3, children4],
         title: 'Infantil',
         description: 'Bebés - Niños',
     },
